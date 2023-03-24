@@ -1,0 +1,254 @@
+:root {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+* {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+font-family: 'Hanken Grotesk', sans-serif;
+}
+a {
+  text-decoration: none;
+}
+img{
+	max-width: 100%;
+}
+li {
+  list-style-type: none;
+}
+p{
+	font-size: 1.5rem;
+}
+button{
+	padding: 0;
+	border: none;
+	background: none;
+	cursor: pointer;
+}
+
+.container {
+  max-width: 100%;
+  padding: 15ch 30ch;
+}
+.top_container{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 50px;
+}
+.nav_icon{
+	display: none;
+}
+.menu{
+	display: flex;
+	gap: 3.5rem;
+	font-size: 1.7rem;
+}
+.menu a{
+	color: hsla(240, 100%, 5%, 0.678);
+
+}
+.menu a:hover{
+	color: hsl(5, 85%, 63%);
+}
+
+main{
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr) ;
+	height: 80vh;
+	grid-row-gap:    2rem;
+    grid-column-gap: 3rem;
+}
+.main_img{
+	grid-column: 1 / 3;
+	grid-row: 1 / 1;
+}
+.main_text {
+	display: flex;
+	font-size: 5.5rem;
+	font-weight: 800;
+	line-height: 2ch;
+}
+.subtext_wrapper{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.subtext_wrapper p{
+	font-size: 1.7rem;
+	line-height: 3ch;
+	font-weight: 400;
+	color: hsl(236, 13%, 42%);
+}
+.read_more{
+max-width: fit-content;
+background-color:hsl(5, 85%, 63%) ;
+color: hsl(36, 100%, 99%);
+ border: 1px solid transparent;
+ font-size: 1.25rem;
+ font-weight: 700;
+ letter-spacing: 1ch;
+ padding: 2ch 5ch;
+ text-transform: uppercase;
+}
+.read_more:hover{
+	background-color: hsl(240, 100%, 5%);
+	color: hsl(36, 100%, 99%);
+}
+.new_articles{
+	grid-column: 3 / 3;
+	grid-row: 1 / 3;
+	background-color: hsl(240, 100%, 5%);
+	padding: 2rem;
+	padding-bottom: 3rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	max-width: 400px;
+}
+.new_header{
+	color: hsl(35, 77%, 62%);
+	font-size: 4rem;
+	padding: 0rem 1rem 0rem 0rem;
+}
+.n_art{
+display: flex;
+flex-direction: column;
+gap: 1rem;
+justify-content: space-between;
+}
+.n_art h3{
+	font-size: 2rem;
+	font-weight: 700;
+	color: hsl(36, 100%, 99%);
+}
+.n_art p{
+	font-weight: 400;
+	font-size: 1.5rem;
+color: hsl(233, 8%, 79%);
+padding-right: 2ch;
+}
+.divider{
+	background-color: hsl(233, 8%, 79%);
+	height:1px;
+}
+.oa {
+	display: flex;
+	height: 12rem;
+	position: relative;
+	transform: translate(0rem,6rem);
+}
+.other_articles_text{
+	padding: 0rem 0rem 0rem 2rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+h3 {
+	color: hsl(233, 8%, 79%);
+	font-size: 3rem;
+	padding-top: 0px;
+}
+
+h2 {
+	font-size: 1.8rem;
+	font-weight: 800;
+}
+.oa p {
+	color: hsl(236, 13%, 42%);
+	line-height: 2.5rem;
+} 
+
+@media screen and (max-width: 1439px) {
+	main{
+	height: 150vh;
+	display: flex;
+	flex-direction: column;
+	/* grid-template-columns: 1fr 1fr;
+	grid-template-rows: repeat(8, 1fr) ;
+	grid-row-gap:    2rem;
+    grid-column-gap: 2rem;
+	grid-template-areas: "img h1"
+			   "img .subtext_wrapper"
+			   ".new_articles .new_articles"
+			   ".new_articles .new_articles"
+			   ".other_art01 .other_art01"
+			   ".other_art02 .other_art02"
+			   ".other_art03 .other_art03"
+			   ; 
+*/
+}
+.container {
+  max-width: 100%;
+  padding: 8ch 3ch;
+}
+.menu{
+	display: none;
+}
+.menu2{
+	padding: 2rem;
+	background-color: hsl(36, 100%, 99%);
+	/* position: absolute;
+	top: 0px;
+	transform: translate(-2rem, 50vh); 
+	width: 70vw;
+	height: 100%; */
+/* width: 100px; */
+position: absolute;
+padding-top: 4rem;
+bottom: 0;
+top: 0;
+right: 0;
+width: 55%;
+display: flex;
+flex-direction: column;
+}
+.close_nav{
+	height: 40px;
+	align-self: flex-end;
+	margin-bottom: 50%;
+}
+.menu2 a{
+	color: black;
+	font-size: 2rem;
+	font-weight: 400;
+	margin: 2rem 0rem 2rem 0rem;
+
+}
+.menu2 img{
+	max-width: 40px;
+}
+.hidden{
+	display:none;
+}
+.nav_icon{
+	display: block;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 3;
+}
+}
+/*
+    Home New Popular Trending Categories The Bright Future of Web 3.0? We dive
+    into the next evolution of the web that claims to put the power of the
+    platforms back into the hands of the people. But is it really fulfilling its
+    promise? Read more New Hydrogen VS Electric Cars Will hydrogen-fueled cars
+    ever catch up to EVs? The Downsides of AI Artistry What are the possible
+    adverse effects of on-demand AI image generation? Is VC Funding Drying Up?
+    Private funding by VC firms is down 50% YOY. We take a look at what that
+    means. 01 Reviving Retro PCs What happens when old PCs are given modern
+    upgrades? 02 Top 10 Laptops of 2022 Our best picks for various needs and
+    budgets. 03 The Growth of Gaming How the pandemic has sparked fresh
+    opportunities.
+	/*
