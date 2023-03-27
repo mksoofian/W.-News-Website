@@ -1,19 +1,21 @@
-// menu selectors
-const nav_btn = document.querySelector(".nav_icon");
-const nav_closeBtn = document.querySelector(".close_nav");
-const menu = document.querySelector(".menu2");
-const overlay = document.querySelector(".hidden");
+/////////// Mobile: Nav Bar
+//Selectors
+const primaryNav = document.querySelector('#primary-navigation');
+const primaryNavOverlay = document.querySelector('.menuO');
+const navToggle = document.querySelector('.mobile-nav-toggle');
 
-let openNav = function () {
-  menu.classList.remove("hidden");
-  overlay.classList.remove("hidden");
-};
+//function
+navToggle.addEventListener('click', () => {
+  const menuVisibility = primaryNav.getAttribute('data-visible');
+  const overlayVisibility = primaryNavOverlay.getAttribute('data-visible');
 
-let closeNav = function () {
-  menu.classList.add("hidden");
-  overlay.classList.add("hidden");
-};
-
-//menu functions
-nav_btn.addEventListener("click", openNav);
-nav_closeBtn.addEventListener("click", closeNav);
+  if (menuVisibility && overlayVisibility === 'false') {
+    primaryNav.setAttribute('data-visible', true);
+    primaryNavOverlay.setAttribute('data-visible', true);
+    navToggle.setAttribute('aria-expanded', true);
+  } else if (menuVisibility && overlayVisibility === 'true') {
+    primaryNav.setAttribute('data-visible', false);
+    primaryNavOverlay.setAttribute('data-visible', false);
+    navToggle.setAttribute('aria-expanded', false);
+  }
+});
