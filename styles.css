@@ -2,6 +2,7 @@
   font-size: 62.5%;
   box-sizing: border-box;
 }
+
 * {
   scroll-behavior: smooth;
   margin: 0;
@@ -19,6 +20,9 @@ li {
 }
 p{
 	font-size: 1.5rem;
+	color: hsla(236, 13%, 42%, 0.63);
+	font-weight:  700;
+
 }
 button{
 	padding: 0;
@@ -26,24 +30,30 @@ button{
 	background: none;
 	cursor: pointer;
 }
-
 .container {
-  max-width: 100%;
-  padding: 15ch 30ch;
+	max-width: 100%;
+	padding: 5% 10%;
 }
 .top_container{
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	margin-bottom: 50px;
+	margin-bottom: 5em;
 }
-.nav_icon{
+
+.header_logo{
+	margin-right: 2em;
+	min-width: fit-content;
+}
+.mobile-nav-toggle{
 	display: none;
 }
 .menu{
 	display: flex;
 	gap: 3.5rem;
-	font-size: 1.7rem;
+	font-size: 1.8rem;
+	margin-left:auto;
+	font-weight: 100;
 }
 .menu a{
 	color: hsla(240, 100%, 5%, 0.678);
@@ -56,42 +66,49 @@ button{
 main{
 	width: 100%;
 	display: grid;
+	min-height: 80vh;
 	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: repeat(3, 1fr) ;
-	height: 80vh;
+	grid-template-rows: 1.5fr 1fr 1fr ;
 	grid-row-gap:    2rem;
     grid-column-gap: 3rem;
 }
+
 .main_img{
 	grid-column: 1 / 3;
 	grid-row: 1 / 1;
+	/* background-image: url(./assets/images/image-web-3-desktop.jpg);
+	background-size:cover; */
 }
+
 .main_text {
 	display: flex;
-	font-size: 5.5rem;
+	font-size:6em;
 	font-weight: 800;
-	line-height: 2ch;
+	line-height: 1em;
+	padding-top: .25em;
 }
 .subtext_wrapper{
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	padding-top: .25em;
+
 }
 .subtext_wrapper p{
 	font-size: 1.7rem;
-	line-height: 3ch;
+	line-height: 2.5ch;
 	font-weight: 400;
-	color: hsl(236, 13%, 42%);
+	padding-top: 1em;
 }
 .read_more{
 max-width: fit-content;
 background-color:hsl(5, 85%, 63%) ;
 color: hsl(36, 100%, 99%);
  border: 1px solid transparent;
- font-size: 1.25rem;
- font-weight: 700;
- letter-spacing: 1ch;
- padding: 2ch 5ch;
+ font-size: 1.5em;
+ font-weight: 500;
+ letter-spacing: .25em;
+ padding: 1em 2em;
  text-transform: uppercase;
 }
 .read_more:hover{
@@ -102,8 +119,7 @@ color: hsl(36, 100%, 99%);
 	grid-column: 3 / 3;
 	grid-row: 1 / 3;
 	background-color: hsl(240, 100%, 5%);
-	padding: 2rem;
-	padding-bottom: 3rem;
+	padding: 3em 2em;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -111,19 +127,20 @@ color: hsl(36, 100%, 99%);
 }
 .new_header{
 	color: hsl(35, 77%, 62%);
-	font-size: 4rem;
-	padding: 0rem 1rem 0rem 0rem;
+	font-size: 4em;
+	font-weight: normal;
 }
 .n_art{
 display: flex;
 flex-direction: column;
-gap: 1rem;
 justify-content: space-between;
+line-height: 2.5em;
 }
 .n_art h3{
-	font-size: 2rem;
+	font-size: 2em;
 	font-weight: 700;
 	color: hsl(36, 100%, 99%);
+	margin-bottom: .5em;
 }
 .n_art p{
 	font-weight: 400;
@@ -135,11 +152,13 @@ padding-right: 2ch;
 	background-color: hsl(233, 8%, 79%);
 	height:1px;
 }
+
 .oa {
 	display: flex;
-	height: 12rem;
+	height: 15rem;
 	position: relative;
 	transform: translate(0rem,6rem);
+	padding-bottom: 7em;
 }
 .other_articles_text{
 	padding: 0rem 0rem 0rem 2rem;
@@ -148,107 +167,174 @@ padding-right: 2ch;
 	justify-content: space-between;
 }
 
-h3 {
+.oa h3 {
 	color: hsl(233, 8%, 79%);
-	font-size: 3rem;
+	font-size: 4rem;
 	padding-top: 0px;
 }
 
-h2 {
-	font-size: 1.8rem;
+.oa h2 {
+	font-size: 2rem;
 	font-weight: 800;
 }
 .oa p {
-	color: hsl(236, 13%, 42%);
 	line-height: 2.5rem;
 } 
-
-@media screen and (max-width: 1439px) {
+@media(max-width: 1179px)
+{
 	main{
-	height: 150vh;
+	max-height: none;
+	display: block;
+}
+.main_text {
 	display: flex;
-	flex-direction: column;
-	/* grid-template-columns: 1fr 1fr;
-	grid-template-rows: repeat(8, 1fr) ;
-	grid-row-gap:    2rem;
-    grid-column-gap: 2rem;
-	grid-template-areas: "img h1"
-			   "img .subtext_wrapper"
-			   ".new_articles .new_articles"
-			   ".new_articles .new_articles"
-			   ".other_art01 .other_art01"
-			   ".other_art02 .other_art02"
-			   ".other_art03 .other_art03"
-			   ; 
-*/
+	font-size: 5em;
+	font-weight: 800;
+	line-height: 2ch;
+    margin: 2rem 0 2rem 0;
+}
+.subtext_wrapper{
+	display: block;
+	margin-bottom: 6em;
+}
+.subtext_wrapper p{
+margin-bottom: 2em;
+font-size:medium;
+}
+
+.new_articles{
+	padding: 2rem;
+	padding-bottom: 3rem;
+	display: flex;
+	flex-direction: row;
+	max-width: 100%;
+}
+.new_header{
+	font-size: 3em;
+	margin-right: 2rem;
+}
+.n_art{
+/* margin: 2em 0 2em 0; */
+padding: 1em 2em 0em 2em;
+line-height: 2em;
+width: 30%;
+justify-content:flex-start;
+}
+
+.n_art h3{
+	font-size: 2em;
+	color: hsl(36, 100%, 99%);
+	margin-bottom: 1em;
+	height: 3em;
+}
+.n_art p{
+font-size: 1.5rem;
+color: hsl(233, 8%, 79%);
+padding: 0;
+}
+.divider{
+	background-color: hsl(233, 8%, 79%);
+	height: 180px;
+	width: 1px;
+}
+/* .oaContainer{
+	display: flex;
+height: fit-content;
+} */
+
+.oa {
+	display: flex;
+	padding: 0;
+	margin: 0;
+
+}
+/* .other_articles_text p{
+display:none;
+} */
+.other_art03{
+	margin-bottom:0;
+}
+
+}
+@media (max-width: 560px){
+main{
+	max-height: none;
+	display: block;
 }
 .container {
   max-width: 100%;
-  padding: 8ch 3ch;
+  padding: 3em 2em;
+}
+.top_container{
+	margin-bottom: 3em;
+}
+
+.mobile-nav-toggle{
+	display: block;
+	position: absolute;
+	aspect-ratio: 1;
+	width: 3em;
+	right: 2rem;
+	top: 3em;
+	z-index: 9999;
+	background-image: url(./assets/images/icon-menu.svg);
+	background-repeat: no-repeat;
+}
+.mobile-nav-toggle[aria-expanded='true']{
+	background-image: url(./assets/images/icon-menu-close.svg);
+	transform: translatey(-5px);
+	transform: translatex(7px);
+	position: fixed;
+}
+.menu[data-visible='true'], .menuO[data-visible='true']{
+   transform: translateX(0%);
+   transition: transform 1.5s;
+   /* transition-delay: 1s ; */
+}
+ .menuO[data-visible='true']{
+   transform: translateX(0%);
+   transition: transform 1.5s ;
 }
 .menu{
-	display: none;
-}
-.menu2{
-	padding: 2rem;
+	/* display: none; */
+	position: fixed;
+	z-index: 999;
+	inset:  0 0 0 30%;
 	background-color: hsl(36, 100%, 99%);
-	/* position: absolute;
-	top: 0px;
-	transform: translate(-2rem, 50vh); 
-	width: 70vw;
-	height: 100%; */
-/* width: 100px; */
-position: absolute;
-padding-top: 4rem;
-bottom: 0;
-top: 0;
-right: 0;
-width: 55%;
-display: flex;
-flex-direction: column;
-}
-.close_nav{
-	height: 40px;
-	align-self: flex-end;
-	margin-bottom: 50%;
-}
-.menu2 a{
-	color: black;
-	font-size: 2rem;
-	font-weight: 400;
-	margin: 2rem 0rem 2rem 0rem;
-
-}
-.menu2 img{
-	max-width: 40px;
-}
-.hidden{
-	display:none;
-}
-.nav_icon{
-	display: block;
+	flex-direction: column;
+	padding: 6em 0 0 2rem;
+	gap: 1em;
+	font-size:x-large;
+	font-weight: lighter;
+	overflow-x: hidden;
+	transform: translateX(250%);
+	transition: transform 2.5s;
 }
 .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(3px);
-  z-index: 3;
+  position: fixed;
+  inset: 0 0 0 0;
+  background-color: rgba(0, 0, 0, 0.164);
+  overflow-x: hidden;
+  transform: translateX(350%);
+  transition: transform 1s;
+  
 }
+.new_articles{
+	padding: 2rem;
+	padding-bottom: 3rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between; /* maybe remove???? */
+	height: min-content;
+	max-width: 100%;
 }
-/*
-    Home New Popular Trending Categories The Bright Future of Web 3.0? We dive
-    into the next evolution of the web that claims to put the power of the
-    platforms back into the hands of the people. But is it really fulfilling its
-    promise? Read more New Hydrogen VS Electric Cars Will hydrogen-fueled cars
-    ever catch up to EVs? The Downsides of AI Artistry What are the possible
-    adverse effects of on-demand AI image generation? Is VC Funding Drying Up?
-    Private funding by VC firms is down 50% YOY. We take a look at what that
-    means. 01 Reviving Retro PCs What happens when old PCs are given modern
-    upgrades? 02 Top 10 Laptops of 2022 Our best picks for various needs and
-    budgets. 03 The Growth of Gaming How the pandemic has sparked fresh
-    opportunities.
-	/*
+.new_header{
+	font-size: 3em;
+	padding: 0rem 1rem 0rem 0rem;
+}
+.n_art{
+margin: 2em 0 2em 0;
+line-height: 3em;
+}
+
+}
