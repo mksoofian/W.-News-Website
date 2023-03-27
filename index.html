@@ -23,42 +23,40 @@
     <div class="container">
       <header>
         <nav class="top_container" role="menubar">
-          <img src="./logo.svg" alt="Website logo" />
-<!--           <button role="navigation" type="menu">
-            <img
-              class="nav_icon"
-              src="icon-menu.svg"
-              alt="Navigation bar icon"
-            />
-          </button> -->
-          <ul class="menu">
+          <div class="header_logo">
+            <img src="/logo.svg" alt="Website logo" />
+          </div>
+          <button
+            aria-controls="primary-navigation"
+            aria-expanded="false"
+            class="mobile-nav-toggle"
+          >
+            <span class="sr-only"> </span>
+          </button>
+          <ul id="primary-navigation" class="menu menu0" data-visible="false">
             <li><a href="./index.html">Home</a></li>
             <li><a href="./index.html">New</a></li>
             <li><a href="./index.html">Popular</a></li>
             <li><a href="./index.html">Trending</a></li>
             <li><a href="./index.html">Categories</a></li>
           </ul>
-
-          <!-- <ul class="menu2 hidden">
-            <img
-              class="close_nav hidden"
-              src="./assets/images/icon-menu-close.svg"
-              alt="X button to close drop down navigation bar"
-            />
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./index.html">New</a></li>
-            <li><a href="./index.html">Popular</a></li>
-            <li><a href="./index.html">Trending</a></li>
-            <li><a href="./index.html">Categories</a></li>
-          </ul> -->
+          <div class="overlay menuO" data-visible="false"></div>
         </nav>
       </header>
-      <main>
-        <img
-          src="image-web-3-desktop.jpg"
-          alt="Random colored shapes"
-          class="main_img"
-        />
+      <main id="main">
+        <div class="main_img">
+          <picture>
+            <source
+              media="(min-width: 561px)"
+              srcset="/image-web-3-desktop.jpg"
+            />
+            <source
+              media="(min-width: 0px)"
+              srcset="/image-web-3-mobile.jpg"
+            />
+            <img src="OtherImage.png" alt="IfItDoesntMatchAnyMedia" />
+          </picture>
+        </div>
         <h1 class="main_text">The Bright Future of Web 3.0?</h1>
         <div class="subtext_wrapper">
           <p>
@@ -91,9 +89,10 @@
             </p>
           </div>
         </div>
+        <!-- <div class="oaContainer"> -->
         <div class="other_art01 oa">
           <img
-            src="image-retro-pcs.jpg"
+            src="/image-retro-pcs.jpg"
             alt="Image of a retro PC"
           />
           <div class="other_articles_text">
@@ -104,7 +103,7 @@
         </div>
         <div class="other_art02 oa">
           <img
-            src="image-top-laptops.jpg"
+            src="/image-top-laptops.jpg"
             alt="Image of a glowing laptop keyboard"
           />
           <div class="other_articles_text">
@@ -115,7 +114,7 @@
         </div>
         <div class="other_art03 oa">
           <img
-            src="image-gaming-growth.jpg"
+            src="/image-gaming-growth.jpg"
             alt="Image of a Playstation Controller"
           />
           <div class="other_articles_text">
@@ -124,7 +123,7 @@
             <p>How the pandemic has sparked fresh opportunities.</p>
           </div>
         </div>
-        <!-- <div class="overlay hidden"></div> -->
+        <!-- </div> -->
       </main>
       <footer></footer>
     </div>
