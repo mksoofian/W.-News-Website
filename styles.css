@@ -270,11 +270,11 @@ main{
 	right: 2rem;
 	top: 3em;
 	z-index: 9999;
-	background-image: url(./assets/images/icon-menu.svg);
+	background-image: url(./icon-menu.svg);
 	background-repeat: no-repeat;
 }
 .mobile-nav-toggle[aria-expanded='true']{
-	background-image: url(./assets/images/icon-menu-close.svg);
+	background-image: url(./icon-menu-close.svg);
 	transform: translatey(-5px);
 	transform: translatex(7px);
 	position: fixed;
