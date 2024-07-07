@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | Results summary component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      body {
+        --Lightred: hsla(0, 100%, 67%, 0.85);
+        --OrangeyYellow: hsl(39, 100%, 56%, 0.85);
+        --GreenTeal: hsl(166, 100%, 37%, 0.85);
+        --CobaltBlue: hsl(234, 85%, 45%, 0.85);
+        font-family: "Hanken Grotesk", sans-serif;
+      }
+      .cards_container {
+        font-family: "Hanken Grotesk", sans-serif;
+        display: flex;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: hsl(0, 0%, 100%);
+        border-radius: 20px;
+        filter: drop-shadow(0px 16px 10px rgba(0, 0, 0, 0.1));
+      }
+
+      .cards {
+        width: 320px;
+        height: 498px;
+      }
+      .score_card {
+        background-image: linear-gradient(
+          hsl(252, 100%, 67%),
+          hsl(241, 81%, 54%)
+        );
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        border-radius: 20px;
+        padding: 2rem;
+      }
+      .header {
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-top: 0px;
+        color: hsla(0, 0%, 100%, 0.842);
+      }
+      .overall_score {
+        background-image: linear-gradient(
+          hsla(256, 72%, 46%, 1),
+          hsla(241, 72%, 46%, 0)
+        );
+        width: 15rem;
+        border-radius: 50%;
+      }
+      .score {
+        font-weight: 800;
+        font-size: 5rem;
+        margin-bottom: 0px;
+        color: hsl(0, 0%, 100%);
+        transform: translatey(-30px);
+      }
+      .scoreOf {
+        margin-top: 0px;
+        transform: translatey(-40px);
+        font-size: 1.25rem;
+        color: hsla(222, 100%, 96%, 0.336);
+      }
+
+      .subheader {
+        font-size: 2rem;
+        font-weight: 700;
+        color: hsl(0, 0%, 100%);
+        margin-bottom: 16px;
+      }
+      .overall_percentage {
+        font-size: 1.2rem;
+        margin-top: 0px;
+        max-width: 15rem;
+        color: hsla(222, 100%, 96%, 0.602);
+      }
+      .summary_card {
+        background-color: hsl(0, 0%, 100%);
+        border-radius: 0px 20px 20px 0px;
+        padding: 2rem 2rem 1rem 2rem;
+      }
+      .header1 {
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-top: 10px;
+      }
+      ul {
+        padding: 0px;
+      }
+      ul li {
+        list-style-type: none;
+        margin-top: 1.3rem;
+        height: 2.2rem;
+        padding: 0.75rem;
+        border-radius: 5px;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .li_left {
+        display: flex;
+        align-items: center;
+      }
+      .li_left p {
+        padding-left: 0.75rem;
+        font-weight: 700;
+      }
+      .cat1 {
+        background-color: hsla(0, 100%, 67%, 0.05);
+      }
+      .cat1 p {
+        color: var(--Lightred);
+      }
+      .cat2 {
+        background-color: hsl(39, 100%, 56%, 0.05);
+      }
+      .cat2 p {
+        color: var(--OrangeyYellow);
+      }
+      .cat3 {
+        background-color: hsl(166, 100%, 37%, 0.05);
+      }
+      .cat3 p {
+        color: var(--GreenTeal);
+      }
+      .cat4 {
+        background-color: hsl(234, 85%, 45%, 0.05);
+      }
+      .cat4 p {
+        color: var(--CobaltBlue);
+      }
+      .result {
+        color: rgba(0, 0, 0, 0.4);
+        font-weight: 700;
+      }
+      .result b {
+        color: hsl(224, 30%, 27%);
+        padding-right: 5px;
+        font-weight: 800;
+      }
+      .btn {
+        height: 4rem;
+        width: 320px;
+        background-color: hsl(224, 30%, 27%);
+        color: hsl(0, 0%, 100%);
+        margin-top: 1rem;
+        border-radius: 50px;
+        font-size: 1.25rem;
+        font-weight: 500;
+        border: none;
+      }
+      .btn:hover {
+        background-image: linear-gradient(
+          hsl(252, 100%, 67%),
+          hsl(241, 81%, 54%)
+        );
+      }
+      @media screen and (max-width: 376px) {
+        .cards_container {
+          display: block;
+          top: 0%;
+          left: 0%;
+          transform: translate(0px, 0px);
+        }
+        .cards {
+          max-width: 100%;
+        }
+        .score_card {
+          border-radius: 0px 0px 40px 40px;
+          height: 50%;
+          justify-content: flex-end;
+        }
+        .header {
+          font-size: 1.5rem;
+          font-weight: 500;
+          margin: 0rem 0rem 1.45rem 0rem;
+        }
+        .overall_score {
+          background-image: linear-gradient(
+            hsla(256, 72%, 46%, 1),
+            hsla(241, 72%, 46%, 0)
+          );
+          width: 10rem;
+          height: 10rem;
+          border-radius: 50%;
+        }
+        .score {
+          font-size: 4rem;
+        }
+
+        .subheader {
+          font-size: 1.5rem;
+          color: hsl(0, 0%, 100%);
+          padding-top: 1rem;
+          padding-bottom: 1rem;
+          margin: 0px;
+        }
+
+        .overall_percentage {
+          font-size: 1rem;
+          margin: 0px;
+          max-width: 17rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="main_container">
+      <section class="cards_container">
+        <section class="score_card cards">
+          <h1 class="header">Your Result</h1>
+          <section class="overall_score">
+            <p class="score">76</p>
+            <p class="scoreOf">of 100</p>
+          </section>
+          <p class="subheader">Great</p>
+          <p class="overall_percentage">
+            You scored higher than 65% of the people who have taken these tests.
+          </p>
+        </section>
+        <section class="summary_card cards">
+          <h1 class="header1">Summary</h1>
+          <ul>
+            <li class="cat1">
+              <section class="li_left">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  fill="none"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    stroke="#F55"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.25"
+                    d="M10.833 8.333V2.5l-6.666 9.167h5V17.5l6.666-9.167h-5Z"
+                  />
+                </svg>
+                <p class="category_name"></p>
+              </section>
+              <section class="result">
+                <b class=".score_result">80 </b> / 100
+              </section>
+            </li>
+            <li class="cat2">
+              <section class="li_left">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  fill="none"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    stroke="#FFB21E"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.25"
+                    d="M5.833 11.667a2.5 2.5 0 1 0 .834 4.858"
+                  />
+                  <path
+                    stroke="#FFB21E"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.25"
+                    d="M3.553 13.004a3.333 3.333 0 0 1-.728-5.53m.025-.067a2.083 2.083 0 0 1 2.983-2.824m.199.054A2.083 2.083 0 1 1 10 3.75v12.917a1.667 1.667 0 0 1-3.333 0M10 5.833a2.5 2.5 0 0 0 2.5 2.5m1.667 3.334a2.5 2.5 0 1 1-.834 4.858"
+                  />
+                  <path
+                    stroke="#FFB21E"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.25"
+                    d="M16.447 13.004a3.334 3.334 0 0 0 .728-5.53m-.025-.067a2.083 2.083 0 0 0-2.983-2.824M10 3.75a2.085 2.085 0 0 1 2.538-2.033 2.084 2.084 0 0 1 1.43 2.92m-.635 12.03a1.667 1.667 0 0 1-3.333 0"
+                  />
+                </svg>
+                <p class="category_name"></p>
+              </section>
+              <section class="result">
+                <b class=".score_result">92 </b> / 100
+              </section>
+            </li>
+            <li class="cat3">
+              <section class="li_left">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  fill="none"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    stroke="#00BB8F"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.25"
+                    d="M7.5 10h5M10 18.333A8.333 8.333 0 1 0 1.667 10c0 1.518.406 2.942 1.115 4.167l-.699 3.75 3.75-.699A8.295 8.295 0 0 0 10 18.333Z"
+                  />
+                </svg>
+                <p class="category_name"></p>
+              </section>
+              <section class="result">
+                <b class=".score_result">61 </b> / 100
+              </section>
+            </li>
+            <li class="cat4">
+              <section class="li_left">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  fill="none"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    stroke="#1125D6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.25"
+                    d="M10 11.667a1.667 1.667 0 1 0 0-3.334 1.667 1.667 0 0 0 0 3.334Z"
+                  />
+                  <path
+                    stroke="#1125D6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.25"
+                    d="M17.5 10c-1.574 2.492-4.402 5-7.5 5s-5.926-2.508-7.5-5C4.416 7.632 6.66 5 10 5s5.584 2.632 7.5 5Z"
+                  />
+                </svg>
+                <p class="category_name"></p>
+              </section>
+              <section class="result">
+                <b class=".score_result">72 </b> / 100
+              </section>
+            </li>
+          </ul>
+          <button class="btn">Continue</button>
+        </section>
+      </section>
+    </section>
+  </body>
+  <script>
+    //array of objects
+    const summary_info = [
+      {
+        category: "Reaction",
+        score: 80,
+        icon: "./assets/images/icon-reaction.svg",
+      },
+      {
+        category: "Memory",
+        score: 92,
+        icon: "./assets/images/icon-memory.svg",
+      },
+      {
+        category: "Verbal",
+        score: 61,
+        icon: "./assets/images/icon-verbal.svg",
+      },
+      {
+        category: "Visual",
+        score: 72,
+        icon: "./assets/images/icon-visual.svg",
+      },
+    ];
+    //selectors
+    const cat_text = document.querySelectorAll(".category_name"); // use .textContent or .innerHtml to insert the catego
+    const cat_score = document.getElementsByClassName(".score_result"); // use .textContent or .innerHtml to insert the catego
+    const avg_score = document.querySelector(".score");
+    // functions
+    // let { category } = summary_info[2]; //test
+    let { category } = summary_info[0];
+    let { score } = summary_info[0];
+    let { icon } = summary_info[0];
+    let scoreArray = [];
+    let sum = 0;
+    let average = 0;
+
+    // const scoreAvg = function (a, b, c) {};
+    const scoreAvg = function (...numbers) {
+      for (let i = 0; i < numbers.length; i++) {
+        sum += numbers[i];
+      }
+      average = sum / numbers.length;
+      return average;
+    };
+
+    const updateInfo = function () {
+      for (let i = 0; i < summary_info.length; i++) {
+        //set
+        ({ category } = summary_info[i]);
+        ({ score } = summary_info[i]);
+
+        //making changes in the HTML
+        cat_text[i].textContent = category; //updates category
+        cat_score[i].textContent = score; //updates category
+
+        scoreArray.push(score); // creates a new array with all score of each category
+      }
+      scoreAvg(...scoreArray); // sums and averages the scores from the score array
+      avg_score.textContent = parseInt(average); // updates overall score on Your Results card
+    };
+    updateInfo();
+  </script>
+</html>

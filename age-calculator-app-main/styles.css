@@ -1,0 +1,90 @@
+:root {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  --purple: hsl(259, 100%, 65%);
+  --lightRed: hsl(0, 100%, 67%);
+  --White: hsl(0, 0%, 100%);
+  --offWhite: hsl(0, 0%, 94%);
+  --lightGrey: hsl(0, 0%, 86%);
+  --smokeyGrey: hsl(0, 1%, 44%);
+  --OffBlack: hsl(0, 0%, 8%);
+}
+* {
+  box-sizing: inherit;
+}
+body {
+  font-size: 1.6rem;
+  font-family: 'Poppins', sans-serif;
+  background: var(--lightGrey);
+}
+img {
+  max-width: 100%;
+}
+.body-container {
+  display: flex;
+  justify-content: center;
+  transform: translateY(20%);
+}
+.card {
+  height: 70vh;
+  width: 60vw;
+  background-color: var(--White);
+  border-radius: 5% 5% 30% 5%;
+  padding: 10rem 8rem;
+}
+.dates-container {
+  display: flex;
+  max-width: 75%;
+  gap: 5rem;
+}
+.date-container {
+  width: 33%;
+}
+
+label {
+  color: var(--smokeyGrey);
+  letter-spacing: 0.25em;
+  margin-bottom: 0.5em;
+  font-size: 14px;
+}
+input {
+  width: 100%;
+  border: 1px var(--lightGrey) solid;
+  border-radius: 10px;
+  font-size: 3.2rem;
+  font-weight: 700;
+  padding: 2rem;
+}
+.form-submit {
+  width: 100%;
+  height: 20px;
+}
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--lightGrey);
+  margin-top: 6rem;
+}
+.icon {
+  border: none;
+  background-color: var(--purple);
+  border-radius: 100%;
+  width: 10.2rem;
+  height: 10.2rem;
+  padding: 2.5rem;
+  display: block;
+  float: right;
+  transform: translateY(-5.5rem);
+}
+.date-container {
+  display: flex;
+  flex-direction: column;
+}
+.results {
+  font-size: 9.6rem;
+  line-height: 1.5rem;
+  font-weight: 800;
+}
+span {
+  color: var(--purple);
+}

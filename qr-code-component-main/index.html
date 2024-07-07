@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | QR code component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      :root {
+        font-size: 62.5%;
+        /* box-sizing: border-box; */
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Open Sans", sans-serif;
+      }
+      body {
+        background-color: hsl(212, 45%, 89%);
+      }
+      .card {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: hsl(0, 0%, 100%);
+        padding: 15px;
+        width: 320px;
+        height: 498px;
+        border-radius: 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        /* Black shadow with 10px blur */
+        filter: drop-shadow(16px 16px 10px rgba(0, 0, 0, 0.13));
+      }
+      .card img,
+      .text {
+        border-radius: 10px;
+      }
+      .bold {
+        padding: 1.5rem;
+        font-family: "Outfit", sans-serif;
+        font-weight: 700;
+        font-size: 2.5rem;
+        color: hsla(217, 45%, 22%, 0.849);
+      }
+      .subtext {
+        font-family: "Outfit", sans-serif;
+        font-weight: 400;
+        font-size: 1.75rem;
+        color: hsl(220, 15%, 55%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <img src="images/image-qr-code.png" alt="QR Code" />
+      <div class="text">
+        <p class="bold">
+          Improve your front-end <br />
+          skills by building projects
+        </p>
+        <p class="subtext">
+          Scan the QR code to visit Frontend <br />Mentor and take your coding
+          skills to <br />
+          the next level
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

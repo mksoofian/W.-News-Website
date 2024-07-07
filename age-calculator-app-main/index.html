@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Age calculator app</title>
+
+    <style></style>
+  </head>
+  <body>
+    <div class="body-container">
+      <div class="card">
+		<form action=".rest" method="get" class="age_calc">
+		  <div class="dates-container">
+				<div class="day-container date-container" data-error="">
+					<label for="date-day">DAY </label>
+					<input
+					type="number"
+					name="date-day"
+					id="date-day"
+					placeholder="DD"
+					min="1"
+					max="31"
+					required
+					/>
+					<div class="input__error"></div>
+				</div>
+				<div class="month-container date-container">
+					<label for="date-month">MONTH </label>
+					<input
+					type="number"
+					name="date-month"
+					id="date-month"
+					placeholder="MM"
+					min="1"
+					max="12"
+					required
+					/>
+					<div class="input__error">Not a valid day</div>
+
+				</div>
+				<div class="year-container date-container">
+					<label for="date-year">YEAR </label>
+					<input
+					type="number"
+					name="date-year"
+					id="date-year"
+					placeholder="YYYY"
+					min="1900"
+					max=""
+					required
+					/>
+					<div class="input__error"></div>
+
+				</div>
+		  </div>
+          <div class="form-submit">
+				<div class="divider"></div>
+		  		<input onclick="" type="image" src="./assets/images/icon-arrow.svg" class="icon"/>
+          </div>
+        </form>
+
+
+		<div class="results">
+			<em>
+			<p><span id="year-result"> - -</span> years</p>
+			<p><span id="month-result"> - - </span> months</p>
+			<p><span id="day-result"> - -</span> days</p></em>
+		</div>
+			</div>
+		</div>
+        <!-- <div class="dividers">
+			<div class="seperator"></div>
+			<button> <img src="./assets/images/icon-arrow.svg" alt="downward arrow icon"></button>
+		</div> -->
+      </div>
+    </div>
+    <script src="./script.js" type="module"></script>
+  </body>
+</html>
+
+<!-- 
+        <div class="inputs">
+			<div class="day">
+				<label for="day_input"></label>
+				<input type="number" id="day" name="day">
+			</div>
+			<div class="month">
+				<label for="month_input"></label>
+				<input type="number" id="month" name="month">
+			</div>
+			<div class="year">
+				<label for="year_input"></label>
+				<input type="number" id="year" name="year">
+-->
